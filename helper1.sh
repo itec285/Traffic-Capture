@@ -19,7 +19,7 @@ rm -rf Twisted-16.3.0.egg-info/
 
 cd /usr/share/mitmf
 wget http://twistedmatrix.com/Releases/Twisted/15.5/Twisted-15.5.0.tar.bz2
-pip install ./Twisted-15.5.0.tar.bz2
+pip install ./Twisted-15.5.0.tar.bz2 --quiet
 
 cd /usr/share/mitmf
 echo DONE DONE DONE DONE DONE

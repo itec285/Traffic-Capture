@@ -2,13 +2,14 @@
 
 # Kali Linux 2016.2 mitmf helper
 # Feb 13 2017
+# IMPORTANT.  CALL THIS WITH THE COMMAND . ./helper1.sh   (the extra . <space> in front makes it so the dir changes)
 
 # This script automates the process of installing mitmf and mimtf lib and then
 # automatically fixing an issue with the Twister library.
 
 # Install the necessary software
 echo Installing necessary software
-apt-get update
+apt-get -y update
 apt install mitmf mitmflib
 
 #Remove the new, broken Twisted app, and install the old version that works.  
@@ -24,5 +25,5 @@ pip install ./Twisted-15.5.0.tar.bz2 --quiet
 cd /usr/share/mitmf
 echo DONE DONE DONE DONE DONE
 
-#Below is a 
+#Below is a sample mitmf command.  Change the IPs as appropriate.
 #python mitmf.py -i eth0 --spoof --arp --target 123.123.123.123 --gateway 123.123.123.1 --upsidedownternet

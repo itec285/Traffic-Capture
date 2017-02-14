@@ -7,7 +7,7 @@
 # automatically fixing an issue with the Twister library.
 
 # Install the necessary software
-
+echo Installing necessary software
 apt-get update
 apt install mitmf mitmflib
 
@@ -20,3 +20,9 @@ rm -rf Twisted-16.3.0.egg-info/
 cd /usr/share/mitmf
 wget http://twistedmatrix.com/Releases/Twisted/15.5/Twisted-15.5.0.tar.bz2
 pip install ./Twisted-15.5.0.tar.bz2
+
+cd /usr/share/mitmf
+echo DONE DONE DONE DONE DONE
+
+#Below is a 
+#python mitmf.py -i eth0 --spoof --arp --target 123.123.123.123 --gateway 123.123.123.1 --upsidedownternet

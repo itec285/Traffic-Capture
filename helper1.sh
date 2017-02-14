@@ -10,7 +10,7 @@
 # Install the necessary software
 echo Installing necessary software
 apt-get update -y
-apt install mitmf mitmflib
+apt install mitmf mitmflib -y
 
 #Remove the new, broken Twisted app, and install the old version that works.  
 #    See https://github.com/byt3bl33d3r/MITMf/issues/294

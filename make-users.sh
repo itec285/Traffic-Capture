@@ -5,7 +5,7 @@
 # Create a .csv file called users.csv with format: Surname,Name,Username,Department,Password
 
 #Uncomment the below to view output
-set -x
+#set -x
 
 MY_INPUT='users.csv'
 
@@ -13,6 +13,7 @@ MY_INPUT='users.csv'
 apt-get update
 apt install vsftpd
 systemctl start vsftpd
+systemctl enable vsftpd
 
 declare -a A_SURNAME
 declare -a A_NAME
@@ -28,6 +29,7 @@ while IFS=, read -r COL1 COL2 COL3 COL4 COL5 TRASH; do
 done <"$MY_INPUT"
 
 for index in "${!A_USERNAME[@]}"; do
-	echo ${A_PASSWORD[$index]}    
-	useradd -g "${A_DEPARTMENT[$index]}" -p "${A_PASSWORD[$index]}" -d "/home/${A_USERNAME[$index]}" -s /bin/bash "${A_USERNAME[$index]}"
+	#echo ${A_PASSWORD[$index]}    
+	useradd -g "${A_DEPARTMENT[$index]}" -m -d "/home/${A_USERNAME[$index]}" -s /bin/bash "${A_USERNAME[$index]}"
+	echo ${A_USERNAME[$index]}:${A_PASSWORD[$index]} | chpasswd
 done

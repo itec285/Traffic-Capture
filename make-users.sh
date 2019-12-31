@@ -1,4 +1,4 @@
-#! /usr/bin/env bash -
+#!/usr/bin/bash
 
 # ML 2019
 # Original source at https://unix.stackexchange.com/questions/414361/creating-users-from-a-csv-file
@@ -8,6 +8,11 @@
 set -x
 
 MY_INPUT='users.csv'
+
+#Install and start the FTP server first
+apt-get update
+apt install vsftpd
+systemctl start vsftpd
 
 declare -a A_SURNAME
 declare -a A_NAME

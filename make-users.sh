@@ -28,5 +28,6 @@ while IFS=, read -r COL1 COL2 COL3 COL4 COL5 TRASH; do
 done <"$MY_INPUT"
 
 for index in "${!A_USERNAME[@]}"; do
-    useradd -g "${A_DEPARTMENT[$index]}" -d "/home/${A_USERNAME[$index]}" -s /bin/bash -p "$(echo "${A_PASSWORD[$index]}" | openssl passwd -1 -stdin)" "${A_USERNAME[$index]}"
+	echo ${A_PASSWORD[$index]}    
+	useradd -g "${A_DEPARTMENT[$index]}" -p "${A_PASSWORD[$index]}" -d "/home/${A_USERNAME[$index]}" -s /bin/bash "${A_USERNAME[$index]}"
 done

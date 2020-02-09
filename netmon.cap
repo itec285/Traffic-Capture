@@ -1,0 +1,7 @@
+# USAGE: bettercap -caplet netmon.cap    (make sure you are in the current dir, or enter full path)
+
+net.probe on
+set ticker.commands clear; net.show; !ping -c 1 google.com > /dev/null 2>&1 && echo "Connected" || echo "Not Connected"
+set ticker.period 3
+ticker on
+

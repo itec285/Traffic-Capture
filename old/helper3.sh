@@ -2,6 +2,7 @@
 
 #ML 2020
 
+cd ~
 apt install -y python-dev install -y python-setuptools libpcap0.8-dev libnetfilter-queue-dev Libssl-dev libjpeg-dev libxml2-dev libcapstone3 libcapstone-dev libffi-dev file python-pip
 pip install virtualenvwrapper
 source /usr/local/bin/virtualenvwrapper.sh

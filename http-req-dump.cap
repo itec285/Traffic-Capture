@@ -1,6 +1,16 @@
-# targeting the whole subnet by default, to make it selective:
-#
+#Usage: sudo ./bettercap -caplet http-req-dump.cap
+
+# Hardcode a target.  Uncomment only if you comment out the dynamic setting, below
+#set arp.spoof.targets 192.168.0.172
+
+# Dynamically ask user for a target.  Comment out if you uncomment out the hardcoded setting, above.
+read arp.spoof.targets Select the target to spoof:
+
+# Alternately, you can comment out all of the above and targeting the whole subnet by default, 
+#  or, to make it selective:
 #   sudo ./bettercap -caplet http-req-dump.cap -eval "set arp.spoof.targets 192.168.1.64"
+
+#########################################################################################
 
 # to make it less verbose
 # events.stream off

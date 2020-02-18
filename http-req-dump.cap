@@ -1,4 +1,4 @@
-#Usage: sudo ./bettercap -caplet http-req-dump.cap
+#Usage: $ sudo bettercap -caplet http-req-dump.cap
 
 # Hardcode a target.  Uncomment only if you comment out the dynamic setting, below
 #set arp.spoof.targets 192.168.0.172
